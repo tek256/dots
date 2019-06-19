@@ -1,0 +1,5 @@
+To use the scripts in .utils/ you'll have to chmod them.
+i.e chmod +x updatedots.sh
+then `./updatedots.sh`
+If you want to move the dots to your own files then you can use `.utils/usedots.sh`
+usedots also has the option to move the files from this repository to a specified folder, so you can do `./usedots.sh /home/test/` or whichever folder you prefer.

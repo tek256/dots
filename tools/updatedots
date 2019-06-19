@@ -1,4 +1,0 @@
-#!/bin/bash
-cp ~/.Xresources ~/.dotfiles/
-cp ~/.vimrc ~/.dotfiles/
-cp ~/.zshrc ~/.dotfiles/

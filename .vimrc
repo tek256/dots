@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 set shortmess+=I
-
+set mouse=a
 set number
 set backspace=indent,eol,start
 set tabstop=4
@@ -12,6 +12,9 @@ set shiftwidth=4
 set laststatus=3
 set background=dark
 set autochdir
+set noswapfile
+set nobackup
+set noundofile
 
 nnoremap <C-s> :w<cr>
 nnoremap <C-j> <C-w>j
