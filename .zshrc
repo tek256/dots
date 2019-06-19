@@ -31,3 +31,4 @@ compinit
 # End of lines added by compinstall
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

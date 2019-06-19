@@ -1,9 +1,9 @@
 ! special colors
 *.foreground:  #b9b9b9
-*.background:  #101010
+*.background:  #0a0a0a
 *.cursorColor:  #b9b9b9
 ! black
-*.color0:      #101010
+*.color0:      #0a0a0a
 *.color8:      #525252
 ! red
 *.color1:      #7c7c7c
@@ -32,9 +32,8 @@ URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-URxvt.font: xft:Fira Mono:pixelsize=13
+URxvt.font: xft:FiraCode:pixelsize=16
 URxvt.letterSpace: 0
 
 *antialias:  true
-*autohint:   true
-
+*autohint: true
