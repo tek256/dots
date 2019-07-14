@@ -5,14 +5,26 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/void/.zshrc'
+# zstyle :compinstall filename '/home/devon/.zshrc'
 
-window_label=urxvt
-PROMPT="%n@%M %1~ > "
+function folder {
+	echo ${PWD##*/}
+}
+
+function simple {
+	echo "::"
+}
+
+MNML_USER_CHAR=':'
+MNML_NORMAL_CHAR='-'
+MNML_INSERT_CHAR='>'
+#MNML_PROMPT=(folder mnml_keymap)
+MNML_PROMPT=(simple mnml_keymap)
+MNML_RPROMPT=()
+source .zsh/minimal.zsh
 
 # CTRL - Backspace 
 bindkey "\C-_" backward-kill-word
-
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[7~" beginning-of-line

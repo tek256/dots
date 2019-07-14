@@ -16,6 +16,7 @@ set noswapfile
 set nobackup
 set noundofile
 
+nnoremap :W<cr> :w<cr>
 nnoremap <C-s> :w<cr>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -27,3 +28,5 @@ nnoremap <C-b> :Buffers<cr>
 
 colorscheme 256_noir
 hi NonText guifg=bg
+
+autocmd BufNewFile,BufRead *.v,*.f set syntax=c

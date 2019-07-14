@@ -27,15 +27,15 @@ if has("gui_running") || &t_Co == 256
     hi Constant cterm=NONE ctermfg=252 ctermbg=black gui=NONE guifg=#d0d0d0 guibg=#0a0a0a
     hi String cterm=NONE ctermfg=245 ctermbg=black gui=NONE guifg=#8a8a8a guibg=#0a0a0a
     hi Comment cterm=NONE ctermfg=240 ctermbg=black gui=NONE guifg=#585858 guibg=#0a0a0a
-    hi Number cterm=NONE ctermfg=196 ctermbg=black gui=NONE guifg=#ff0000 guibg=#0a0a0a
-    hi Error cterm=NONE ctermfg=255 ctermbg=DarkRed gui=NONE guifg=#eeeeee guibg=#0a0a0a
-    hi ErrorMsg cterm=NONE ctermfg=255 ctermbg=DarkRed gui=NONE guifg=#eeeeee guibg=#0a0a0a
+    hi Number cterm=NONE ctermfg=255  ctermbg=black gui=NONE guifg=#ff0000 guibg=#0a0a0a
+    hi Error cterm=NONE ctermfg=255 ctermbg=DarkGray gui=NONE guifg=#eeeeee guibg=#0a0a0a
+    hi ErrorMsg cterm=NONE ctermfg=255 ctermbg=DarkGray gui=NONE guifg=#eeeeee guibg=#0a0a0a
     hi Search cterm=NONE ctermfg=245 ctermbg=Gray gui=NONE guifg=#8a8a8a guibg=#0a0a0a
     hi IncSearch cterm=reverse ctermfg=255 ctermbg=245 gui=reverse guifg=#eeeeee guibg=#0a0a0a
     hi DiffChange cterm=NONE ctermfg=160 ctermbg=255 gui=NONE guifg=#d70000 guibg=#0a0a0a
-    hi DiffText cterm=bold ctermfg=250 ctermbg=196 gui=bold guifg=#bcbcbc guibg=#0a0a0a
+    hi DiffText cterm=bold ctermfg=250 ctermbg=255 gui=bold guifg=#bcbcbc guibg=#0a0a0a
     hi SignColumn cterm=NONE ctermfg=124 ctermbg=240 gui=NONE guifg=#af0000 guibg=#0a0a0a
-    hi SpellBad cterm=undercurl ctermfg=255 ctermbg=88 gui=undercurl guifg=#eeeeee guibg=#0a0a0a
+    hi SpellBad cterm=undercurl ctermfg=255 ctermbg=245 gui=undercurl guifg=#eeeeee guibg=#0a0a0a
     hi SpellCap cterm=NONE ctermfg=255 ctermbg=124 gui=NONE guifg=#eeeeee guibg=#0a0a0a
     hi SpellRare cterm=NONE ctermfg=124 ctermbg=16 gui=NONE guifg=#af0000 guibg=#0a0a0a
     hi WildMenu cterm=NONE ctermfg=240 ctermbg=255 gui=NONE guifg=#585858 guibg=#0a0a0a
@@ -55,17 +55,17 @@ else
     hi Constant cterm=NONE ctermfg=Gray ctermbg=Black
     hi String cterm=NONE ctermfg=Gray ctermbg=Black
     hi Comment cterm=NONE ctermfg=DarkGray ctermbg=Black
-    hi Number cterm=NONE ctermfg=Red ctermbg=Black
+    hi Number cterm=NONE ctermfg=White ctermbg=Black
     hi Error cterm=NONE ctermfg=White ctermbg=Black
     hi ErrorMsg cterm=NONE ctermfg=White ctermbg=Black
     hi Search cterm=NONE ctermfg=Gray ctermbg=Black
     hi IncSearch cterm=reverse ctermfg=White ctermbg=Black
-    hi DiffChange cterm=NONE ctermfg=Red ctermbg=White
-    hi DiffText cterm=bold ctermfg=Gray ctermbg=Red
-    hi SignColumn cterm=NONE ctermfg=Red ctermbg=DarkGray
-    hi SpellBad cterm=undercurl ctermfg=White ctermbg=DarkRed
+    hi DiffChange cterm=NONE ctermfg=White ctermbg=Black
+    hi DiffText cterm=bold ctermfg=Gray ctermbg=White
+    hi SignColumn cterm=NONE ctermfg=White ctermbg=DarkGray
+    hi SpellBad cterm=undercurl ctermfg=White ctermbg=Black
     hi SpellCap cterm=NONE ctermfg=White ctermbg=Black
-    hi SpellRare cterm=NONE ctermfg=Red ctermbg=Black
+    hi SpellRare cterm=NONE ctermfg=White ctermbg=Black
     hi WildMenu cterm=NONE ctermfg=DarkGray ctermbg=Black
     hi Pmenu cterm=NONE ctermfg=White ctermbg=DarkGray
     hi PmenuThumb cterm=NONE ctermfg=Black ctermbg=DarkGray
@@ -130,3 +130,4 @@ highlight! link Cursor StatusLine
 highlight! link Underlined SpellRare
 highlight! link rstEmphasis SpellRare
 highlight! link diffChanged DiffChange
+
