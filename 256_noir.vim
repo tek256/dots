@@ -33,7 +33,7 @@ if has("gui_running") || &t_Co == 256
     hi Search cterm=NONE ctermfg=245 ctermbg=Gray gui=NONE guifg=#8a8a8a guibg=#0a0a0a
     hi IncSearch cterm=reverse ctermfg=255 ctermbg=245 gui=reverse guifg=#eeeeee guibg=#0a0a0a
     hi DiffChange cterm=NONE ctermfg=160 ctermbg=255 gui=NONE guifg=#d70000 guibg=#0a0a0a
-    hi DiffText cterm=bold ctermfg=250 ctermbg=255 gui=bold guifg=#bcbcbc guibg=#0a0a0a
+    hi DiffText cterm=bold ctermfg=255 ctermbg=DarkGray gui=bold guifg=#bcbcbc guibg=#0a0a0a
     hi SignColumn cterm=NONE ctermfg=124 ctermbg=240 gui=NONE guifg=#af0000 guibg=#0a0a0a
     hi SpellBad cterm=undercurl ctermfg=255 ctermbg=245 gui=undercurl guifg=#eeeeee guibg=#0a0a0a
     hi SpellCap cterm=NONE ctermfg=255 ctermbg=124 gui=NONE guifg=#eeeeee guibg=#0a0a0a
@@ -41,8 +41,8 @@ if has("gui_running") || &t_Co == 256
     hi WildMenu cterm=NONE ctermfg=240 ctermbg=255 gui=NONE guifg=#585858 guibg=#0a0a0a
     hi Pmenu cterm=NONE ctermfg=255 ctermbg=240 gui=NONE guifg=#eeeeee guibg=#0a0a0a
     hi PmenuThumb cterm=NONE ctermfg=232 ctermbg=240 gui=NONE guifg=#080808 guibg=#0a0a0a
-    hi SpecialKey cterm=NONE ctermfg=16 ctermbg=255 gui=NONE guifg=#000000 guibg=#0a0a0a
-    hi MatchParen cterm=NONE ctermfg=16 ctermbg=240 gui=NONE guifg=#000000 guibg=#0a0a0a
+    hi SpecialKey cterm=NONE ctermfg=16 ctermbg=255 gui=NONE guifg=#eeeeee guibg=#0a0a0a
+    hi MatchParen cterm=NONE ctermfg=white ctermbg=black gui=NONE guifg=#eeeeee guibg=#0a0a0a
     hi CursorLine cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#0a0a0a
     hi StatusLine cterm=bold,reverse ctermfg=245 ctermbg=black gui=bold,reverse guifg=#8a8a8a guibg=#0a0a0a
     hi StatusLineNC cterm=reverse ctermfg=236 ctermbg=black gui=reverse guifg=#303030 guibg=#0a0a0a
@@ -68,9 +68,9 @@ else
     hi SpellRare cterm=NONE ctermfg=White ctermbg=Black
     hi WildMenu cterm=NONE ctermfg=DarkGray ctermbg=Black
     hi Pmenu cterm=NONE ctermfg=White ctermbg=DarkGray
-    hi PmenuThumb cterm=NONE ctermfg=Black ctermbg=DarkGray
-    hi SpecialKey cterm=NONE ctermfg=Black ctermbg=Black
-    hi MatchParen cterm=NONE ctermfg=Black ctermbg=DarkGray
+    hi PmenuThumb cterm=NONE ctermfg=White ctermbg=DarkGray
+    hi SpecialKey cterm=NONE ctermfg=White ctermbg=Black
+    hi MatchParen cterm=NONE ctermfg=White ctermbg=DarkGray
     hi CursorLine cterm=NONE ctermfg=NONE ctermbg=Black
     hi StatusLine cterm=bold,reverse ctermfg=Gray ctermbg=Black
     hi StatusLineNC cterm=reverse ctermfg=DarkGray ctermbg=Black
@@ -130,4 +130,3 @@ highlight! link Cursor StatusLine
 highlight! link Underlined SpellRare
 highlight! link rstEmphasis SpellRare
 highlight! link diffChanged DiffChange
-
