@@ -44,3 +44,6 @@ compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+alias b="cd ~/astera/ && ./unix_build"
+alias ra="cd ~/astera/build/ && ./astera"
+alias e="vim ~/astera/"

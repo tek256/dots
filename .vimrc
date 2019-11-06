@@ -5,16 +5,19 @@ call plug#end()
 
 set shortmess+=I
 set mouse=a
-set number
+set nonumber
 set backspace=indent,eol,start
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
 set laststatus=3
 set background=dark
 set autochdir
 set noswapfile
 set nobackup
 set noundofile
+set scrolloff=10
 
 nnoremap :W<cr> :w<cr>
 nnoremap <C-s> :w<cr>
@@ -23,10 +26,23 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"noremap <Up> <Nop>
+"noremap <Down> <Nop>
+"noremap <Left> <Nop>
+"noremap <Right> <Nop>
+
 nnoremap <C-p> :Files<cr>
 nnoremap <C-b> :Buffers<cr>
 
-colorscheme 256_noir
+let g:clang_format#code_style = "LLVM"
+
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+colorscheme simple-dark
 hi NonText guifg=bg
 
 autocmd BufNewFile,BufRead *.v,*.f set syntax=c
+autocmd FileType c ClangFormatAutoEnable
+
+autocmd FileType c nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c vnoremap <buffer><Leader>cf :ClangFormat<CR>
