@@ -1,7 +1,7 @@
 <div id="header">
     <p align="center">
       <b>dots</b><br>
-	  <span font-size="16px">a simple dark grayscale vim theme</span><br>
+	  <span font-size="16px">just the dotfiles Devon uses.</span><br>
       <span font-size="12px">Made by <a href="http://tek256.com">Devon</a> with love.</span><br><br>
       <span><a href="https://discordapp.com/invite/63GvpMh">Discord</a> | <a href="https://github.com/sponsors/tek256">Support</a></span>
     </p>
