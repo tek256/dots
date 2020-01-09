@@ -1,15 +1,13 @@
 <div id="header">
     <p align="center">
       <b>dots</b><br>
-	  <span font-size="16px">just the dotfiles Devon uses.</span><br>
-      <span font-size="12px">Made by <a href="http://tek256.com">Devon</a> with love.</span><br><br>
       <span><a href="https://discordapp.com/invite/63GvpMh">Discord</a> | <a href="https://github.com/sponsors/tek256">Support</a></span>
     </p>
 </div>
 <div id="about">
 	<img src="screenshot.png" alt="screenshot"/>
 	<h3>About</h3>
-	<p>Honestly, just the dotfiles Devon uses. Use them as you wish. <br>
+	<p>Honestly, just the dotfiles Devon uses. Use them as you wish. <br> <br>
   <b>term:</b> rxvt-unicode <br>
   <b>font:</b> <a href="https://sourcefoundry.org/hack/">hack</a> <br>
   <b>shell:</b> zsh <br>
