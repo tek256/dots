@@ -33,6 +33,7 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <C-p> :Files<cr>
 nnoremap <C-b> :Buffers<cr>
+nnoremap <C-r> :Rg<cr>
 
 let g:clang_format#code_style = "LLVM"
 
