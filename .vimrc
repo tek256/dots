@@ -35,12 +35,32 @@ nnoremap <C-p> :Files<cr>
 nnoremap <C-b> :Buffers<cr>
 nnoremap <C-g> :Rg<cr>
 
+let g:fzf_preview_window = ''
 let g:clang_format#code_style = "LLVM"
 
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 colorscheme simple-dark
 hi NonText guifg=bg
+
+let g:clang_format#style_options = {
+     \ "AllowShortIfStatementsOnASingleLine" : "true",
+     \ "IndentCaseLabels" : "true",
+     \ "IndentWidth" : 2,
+     \ "PointerAlignment" : "Left",
+     \ "TabWidth" : 2,
+     \ "AlignConsecutiveMacros" : "true",
+     \ "AlignConsecutiveAssignments" : "true",
+     \ "AlignConsecutiveDeclarations" : "true",
+     \ "AlignEscapedNewlines" : "true",
+     \ "AlignTrailingComments" : "true",
+     \ "AlignOperands" : "true",
+     \ "AllowShortBlocksOnASingleLine" : "true",
+     \ "AllowShortFunctionsOnASingleLine" : "true",
+     \ "ColumnLimit" : 80,
+     \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
+     \ "SortIncludes" : "false",
+     \ "SpaceAfterCStyleCast" : "false" }
 
 autocmd BufNewFile,BufRead *.v,*.f set syntax=c
 autocmd FileType c ClangFormatAutoEnable

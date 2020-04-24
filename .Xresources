@@ -1,80 +1,8 @@
-! tek256s URXVT config (github.com/tek256/dots)
+Xft.dpi: 192
 
-! Disable the scroll bar
-URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
-
-! Border setting, I prefer internal borders
-URxvt.borderWidth: 0
-URxvt.internalBorder: 30
-URxvt.externalBorder: 0
-
-! We arent using transparency
-URxvt*transparent:       false
-
-! Set the font preferences
-URxvt.font: xft:Hack:pixelsize=16
-URxvt.letterSpace: 0
-*antialias:  true
-*autohint:   true
-
-! Set the colors
-*highlightColor: #2E2E2C
-*cursorColor:    #AFB0AB
-*borderColor:    #0A0A0A
-*background:     #0A0A0A
-*foreground:     #B8B9B4
-
-!BLACK
-*color0:  #0A0A0A
-*color8:  #2E2E2C
-!!RED
-*color1:  #939490
-*color9:  #989995
-!!GREEN
-*color2:  #5E5E5C
-*color10: #636361
-!!YELLOW
-*color3:  #B6B8B3
-*color11: #BBBDB8
-!!BLUE
-*color4:  #727370
-*color12: #777875
-!!MAGENTA
-*color5:  #D1D1CB
-*color13: #D6D6D0
-!!CYAN
-*color6:  #636361
-*color14: #696966
-!!WHITE
-*color7:  #AAABA6
-*color15: #AFB0AB
-
-! Set the window size
-URxvt.geometry: 200x48
-
-! Disabling perl extensions
-! URxvt.perl-ext:
-! URxvt.perl-ext-common:
-
-! XTerm escapes, word by word movement
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
-URxvt.keysym.Control-Up: \033[1;5A
-URxvt.keysym.Control-Down: \033[1;5B
-URxvt.keysym.Control-Right: \033[1;5C
-URxvt.keysym.Control-Left: \033[1;5D
-
-! Copy Paste & Other extensions (requires perl)
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.copyCommand: xclip -i -selection clipboard
-URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.urlLauncher: firefox
-URxvt.underlineURLs: true
-URxvt.urlButton: 1
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
