@@ -1,27 +1,23 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/.zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-# zstyle :compinstall filename '/home/devon/.zshrc'
 
 function folder {
-	echo ${PWD##*/}
+  echo ${PWD##*/}
 }
 
 function simple {
-	echo "::"
+  echo "::"
 }
 
 MNML_USER_CHAR=':'
 MNML_NORMAL_CHAR='-'
 MNML_INSERT_CHAR='>'
-#MNML_PROMPT=(folder mnml_keymap)
+# MNML_PROMPT=(folder mnml_keymap)
 MNML_PROMPT=(simple mnml_keymap)
 MNML_RPROMPT=()
-source .zsh/minimal.zsh
+source ~/.config/zsh/minimal.zsh
 
 # CTRL - Backspace 
 bindkey "\C-_" backward-kill-word
@@ -39,11 +35,13 @@ bindkey "\e[3~" delete-char
 bindkey "\e\d" undo
 
 autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.cache/zsh/fzf.zsh ] && source ~/.cache/zsh/fzf.zsh
 
-alias b="cd ~/astera/ && ./unix_build"
-alias ra="cd ~/astera/build/ && ./astera"
-alias e="vim ~/astera/"
+# Add gpg agent
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+
+alias b="cmake --build build"
+alias s="cmake -GNinja -Bbuild -S. -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"

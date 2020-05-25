@@ -8,12 +8,10 @@
 	<img src="screenshot.png" alt="screenshot"/>
 	<h3>About</h3>
 	<p>Honestly, just the dotfiles Devon uses. Use them as you wish. <br> <br>
-  <b>term:</b> rxvt-unicode <br>
+  <b>term:</b> xfce4-terminal<br>
   <b>font:</b> <a href="https://sourcefoundry.org/hack/">hack</a> <br>
   <b>shell:</b> zsh <br>
-  <b>vim-colors:</b> <a href="https://github.com/tek256/simple-dark">simple-dark</a> <br>
-
-  <i>Please note all of the .urxvt/ext files were gathered from <a href="https://github.com/muennich/urxvt-perls">muennich's repository</a></i>
+  <b>colors:</b> <a href="https://github.com/tek256/simple-dark">simple-dark</a> <br>
 	</p>
 </div>
 <div id="usage">

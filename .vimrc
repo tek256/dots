@@ -1,8 +1,10 @@
+" I use this FZF plugin to swap between buffers & files heavily
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
 call plug#end()
 
+" General configurations
 set shortmess+=I
 set mouse=a
 set nonumber
@@ -14,11 +16,15 @@ set autoindent
 set laststatus=3
 set background=dark
 set autochdir
+set noundofile
 set noswapfile
 set nobackup
-set noundofile
 set scrolloff=10
 
+" Gotta use my own colorscheme
+colorscheme simple-dark
+
+" Simple keybindings for sanity's sake
 nnoremap :W<cr> :w<cr>
 nnoremap <C-s> :w<cr>
 nnoremap <C-j> <C-w>j
@@ -26,25 +32,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-"noremap <Up> <Nop>
-"noremap <Down> <Nop>
-"noremap <Left> <Nop>
-"noremap <Right> <Nop>
-
-nnoremap <C-p> :Files<cr>
+" FZF Config
+nnoremap <C-p> :GFiles --cached --others --exclude-standard<cr>
 nnoremap <C-b> :Buffers<cr>
 nnoremap <C-g> :Rg<cr>
-
 let g:fzf_preview_window = ''
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+
+" Clang Format config
+let g:clang_format#auto_format = 1
 let g:clang_format#code_style = "LLVM"
-
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-
-colorscheme simple-dark
-hi NonText guifg=bg
-
 let g:clang_format#style_options = {
-     \ "AllowShortIfStatementsOnASingleLine" : "true",
+     \ "AllowShortIfStatementsOnASingleLine" : "false",
      \ "IndentCaseLabels" : "true",
      \ "IndentWidth" : 2,
      \ "PointerAlignment" : "Left",
@@ -60,10 +59,9 @@ let g:clang_format#style_options = {
      \ "ColumnLimit" : 80,
      \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
      \ "SortIncludes" : "false",
-     \ "SpaceAfterCStyleCast" : "false" }
+     \ "SpaceAfterCStyleCast" :"false" }
 
-autocmd BufNewFile,BufRead *.v,*.f set syntax=c
-autocmd FileType c ClangFormatAutoEnable
+" Move .viminfo file to ~/.vim/cache/.viminfo
+if &compatible | set nocompatible | endif
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
 
-autocmd FileType c nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c vnoremap <buffer><Leader>cf :ClangFormat<CR>
