@@ -8,7 +8,7 @@
 	<img src="screenshot.png" alt="screenshot"/>
 	<h3>About</h3>
 	<p>Honestly, just the dotfiles Devon uses. Use them as you wish. <br> <br>
-  <b>term:</b> xfce4-terminal<br>
+  <b>term:</b> alacritty<br>
   <b>font:</b> <a href="https://sourcefoundry.org/hack/">hack</a> <br>
   <b>shell:</b> zsh <br>
   <b>colors:</b> <a href="https://github.com/tek256/simple-dark">simple-dark</a> <br>

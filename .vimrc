@@ -2,9 +2,11 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
+  Plug 'tek256/simple-dark'
 call plug#end()
 
 " General configurations
+set ttymouse=sgr
 set shortmess+=I
 set mouse=a
 set nonumber
