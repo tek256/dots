@@ -15,7 +15,7 @@ font:
     family: Hack
     style: Bold Italic
 
-  size: 9
+  size: 10
 
 colors:
    primary:
@@ -43,6 +43,11 @@ colors:
      white: '#AFB0AB'
 
 window:
+  dynamic_title: true
+  dimensions:
+    columns: 150
+    lines: 36
+
   padding:
     x: 15
     y: 20
@@ -54,7 +59,6 @@ mouse:
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
-dynamic_title: true
 
 key_bindings:
 - { key: V,        mods: Command,       action: Paste                        }
