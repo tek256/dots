@@ -7,26 +7,17 @@ call plug#end()
 
 " General configurations
 set ttymouse=sgr
-set shortmess+=I
 set mouse=a
-set nonumber
 set backspace=indent,eol,start
+set scrolloff=10
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
 set autoindent
-set laststatus=3
-set background=dark
 set autochdir
-set noundofile
-set noswapfile
-set nobackup
-set scrolloff=10
 
-" Gotta use my own colorscheme
-colorscheme simple-dark
-
-" Simple keybindings for sanity's sake
 nnoremap :W<cr> :w<cr>
 nnoremap <C-s> :w<cr>
 nnoremap <C-j> <C-w>j
@@ -34,12 +25,26 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" No temporary files
+set noundofile
+set noswapfile
+set nobackup
+
+" Visual apperance
+set shortmess+=I
+set nonumber 
+set laststatus=3 
+
+set background=dark 
+colorscheme simple-dark 
+
 " FZF Config
-nnoremap <C-p> :GFiles --cached --others --exclude-standard<cr>
+nnoremap <C-p> :Files<cr>
 nnoremap <C-b> :Buffers<cr>
 nnoremap <C-g> :Rg<cr>
-let g:fzf_preview_window = ''
+
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+let g:fzf_preview_window = ''
 
 " Clang Format config
 let g:clang_format#auto_format = 1
