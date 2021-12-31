@@ -16,7 +16,6 @@ set shiftwidth=2
 set expandtab
 
 set autoindent
-set autochdir
 
 nnoremap :W<cr> :w<cr>
 nnoremap <C-s> :w<cr>
