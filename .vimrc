@@ -32,7 +32,7 @@ set nobackup
 " Visual apperance
 set shortmess+=I
 set nonumber 
-set laststatus=3 
+set laststatus=0 
 
 set background=dark 
 colorscheme simple-dark 
