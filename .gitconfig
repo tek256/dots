@@ -1,0 +1,26 @@
+[cola]
+	spellcheck = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[commit]
+	gpgsign = true
+[merge]
+	conflictstyle = zdiff3
+	tool = meld
+[push]
+	default = current
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+[rerere]
+	enabled = true
+[help]
+	autocorrect = prompt
+[branch]
+	sort = -committerdate
+
