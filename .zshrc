@@ -3,10 +3,11 @@
 HISTFILE=~/.cache/.zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
+KEYTIMEOUT=1
 bindkey -e
 
 function folder {
-  echo ${PWD##*/}
+  echo ${PWD##*/} "::"
 }
 
 function simple {
@@ -16,8 +17,8 @@ function simple {
 MNML_USER_CHAR=':'
 MNML_NORMAL_CHAR='-'
 MNML_INSERT_CHAR='>'
-# MNML_PROMPT=(folder mnml_keymap)
-MNML_PROMPT=(simple mnml_keymap)
+MNML_PROMPT=(folder mnml_keymap)
+#MNML_PROMPT=(simple mnml_keymap)
 MNML_RPROMPT=()
 source ~/.config/zsh/minimal.zsh
 
@@ -78,7 +79,40 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
 
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
+export RIPGREP_CONFIG_PATH=/home/devon/.config/rgrc
+
 alias b="cmake --build build"
-alias s="cmake -GNinja -Bbuild -S. -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"
+alias s="cmake -Bbuild -S. -GNinja"
+# Old VPN commands
+# alias vpnup="sudo rc-service wg_pia start"
+# alias vpndown="sudo rc-service wg_pia stop"
+
+vpnup() {
+  if [ -z "$1" ]; then
+    echo "Usage: vpnup <vpn_name>"
+  else
+    sudo nmcli connection up "$1"
+  fi
+}
+
+vpndown() {
+  if [ -z "$1" ]; then
+    echo "Usage: vpndown <vpn_name>"
+  else 
+    sudo nmcli connection down "$1"
+  fi
+}
+
+alias vpnactive="nmcli connection show --active"
+alias vpnall="nmcli connection show"
+alias logd="/home/devon/.script/log.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:/home/devon/.tool/sharpmake"
+
+# Created by `userpath` on 2023-09-18 23:09:55
+export PATH="$PATH:/home/devon/.local/bin"

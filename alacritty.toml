@@ -1,0 +1,80 @@
+[colors.bright]
+black = "#000000"
+blue = "#777875"
+cyan = "#696966"
+green = "#636361"
+magenta = "#D6D6D0"
+red = "#989995"
+white = "#AFB0AB"
+yellow = "#BBBDB8"
+
+[colors.normal]
+black = "#000000"
+blue = "#727370"
+cyan = "#636361"
+green = "#5E6E5C"
+magenta = "#D1D1CB"
+red = "#939490"
+white = "#AAABA6"
+yellow = "#B6B8B3"
+
+[colors.primary]
+background = "#000000"
+foreground = "#B8B9B4"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[window]
+dynamic_title = true
+
+[window.dimensions]
+columns = 109
+lines = 31
+
+[window.padding]
+x = 30
+y = 20
