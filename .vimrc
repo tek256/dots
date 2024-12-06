@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Auto tagging
-au BufWritePost *.c,*.cpp,*.h silent! !ctags -R --exclude=.git --exclude=build &
+au BufWritePost *.c,*.cpp,*.h silent! execute '!ctags --exclude=.git --exclude=build --exclude=tools/shd_builder/SDL_shadercross/ -R > /dev/null 2>&1 &'
 
 " Whitebox stuff
 " source /home/devon/.vim/plugin/whitebox/whitebox.vim
@@ -42,7 +42,7 @@ set ignorecase
 set timeoutlen=1000 ttimeoutlen=0
 
 " Debugger
-packadd termdebug
+packadd! termdebug
 command! -nargs=* -complete=command Dbg Termdebug <args>
 
 let g:asyncrun_rootmarks = ['.git', 'CMakePresets.json']
@@ -54,9 +54,10 @@ let g:asyncrun_rootmarks = ['.git', 'CMakePresets.json']
 " Build that shit
 nnoremap <silent> <F1> :call ToggleQuickFix()<CR>
 nnoremap <F4> :AsyncRun cmake --build build<CR>
-nnoremap <F5> :AsyncRun -cwd=<root> cmake --build build && cd build/out && ./game<CR>
+nnoremap <F5> :AsyncRun -cwd=<root> cmake --build build && cd build/out && ./engine<CR>
 nnoremap :dbg :Dbg<CR>
 nnoremap <F6> :Dbg<CR>
+" nnoremap <C-[> :b#<CR>
 
 " Auto open asyncrun quickfix
 let g:asyncrun_open=8
