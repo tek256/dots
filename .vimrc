@@ -27,6 +27,53 @@ set mouse=a
 set backspace=indent,eol,start
 set scrolloff=10
 
+" Term debug stuff
+set splitright " Split windows start on right
+
+packadd! termdebug
+
+let g:termdebug_config = {
+\ 'position': 'left',
+\ 'wide': 60,
+\ 'winbar': 0,
+\ 'toggle_height': 12,
+\ 'timeout': 500,
+\ 'evaluate_in_popup': v:true,
+\ 'popup': 1,
+\ }
+
+" let g:termdebug_config = {
+"  \ 'wide': 1, 
+"  \ 'winbar': 1, 
+"  \ 'minheight': 5,
+"  \ 'maxheight': 10,
+"  \ 'toggle_height': 4,
+"  \ 'width': 60,
+"  \ 'position': 'left',
+"  \ }
+
+"let g:termdebug_config['timeout'] = 1000
+"let g:termdebug_config['evaluate_in_popup'] = v:true
+"let g:termdebug_config['popup'] = 1
+
+" Test custom term debug commands
+"map ,w :call TermDebugSendCommand('where')<CR>
+
+
+
+nnoremap <F5> :Termdebug<CR>
+
+" Termdebug mappings (available after Termdebug is loaded)
+" augroup TermdebugMappings
+"  autocmd!
+"  autocmd FileType termdebug nnoremap <buffer> <F6> :Continue<CR>
+"  autocmd FileType termdebug nnoremap <buffer> <F7> :Over<CR>
+"  autocmd FileType termdebug nnoremap <buffer> <F8> :Step<CR>
+"  autocmd FileType termdebug nnoremap <buffer> <F9> :Break<CR>
+"  autocmd FileType termdebug nnoremap <buffer> <F10> :Clear<CR>
+" augroup END
+
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -39,10 +86,9 @@ set ignorecase
 set timeoutlen=1000 ttimeoutlen=0
 
 " Debugger
-" packadd termdebug
 " command! -nargs=* -complete=command Dbg Termdebug <args>
 
-let g:asyncrun_rootmarks = ['.git', 'CMakePresets.json']
+" let g:asyncrun_rootmarks = ['.git', 'CMakePresets.json']
 
 " TODO:
 " - F5: Build & Run
@@ -50,11 +96,11 @@ let g:asyncrun_rootmarks = ['.git', 'CMakePresets.json']
 " - F7: Full rebuild
 " Build that shit
 nnoremap <silent> <F1> :call ToggleQuickFix()<CR>
-nnoremap <F4> :AsyncRun cmake --build build<CR>
-nnoremap <F9> :AsyncRun ctags -R<CR>
-nnoremap <F5> :AsyncRun -cwd=<root> cmake --build build && cd build/out && ./game<CR>
-nnoremap :dbg :Dbg<CR>
-nnoremap <F6> :Dbg<CR>
+nnoremap <F4> :verbose AsyncRun cmake --build build<cr>
+nnoremap <F9> :AsyncRun ctags -R <CR>
+" nnoremap <F5> :AsyncRun -cwd=<root> cmake --build build && cd build/out && ./game<CR>
+" nnoremap :dbg :Dbg<CR>
+" nnoremap <F6> :Dbg<CR>
 
 " Auto open asyncrun quickfix
 let g:asyncrun_open=8
@@ -69,11 +115,11 @@ set errorformat+=%-G%f:%l:%c:\ %tarning:\ %m
 
 nnoremap :W<cr> :w<cr>
 nnoremap :Wq :wq
-nnoremap <C-s> :w<cr>
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-s> :w<cr>
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
 " Auto regen ctags
 " au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
@@ -113,7 +159,7 @@ nnoremap <silent> <C-b> :Buffers<cr>
 nnoremap <silent> <C-g> :Rgstuff<cr>
 
 let g:fzf_preview_window = ['hidden']
-let g:fzf_layout = { 'down' : '35%' }
+let g:fzf_layout = { 'down' : '40%' }
 
 " Clang Format config
 let g:clang_format#auto_format = 1
@@ -132,10 +178,11 @@ let g:clang_format#style_options = {
      \ "AlignOperands" : "true",
      \ "AllowShortBlocksOnASingleLine" : "true",
      \ "AllowShortFunctionsOnASingleLine" : "true",
-     \ "ColumnLimit" : 80,
+     \ "ColumnLimit" : 90,
      \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
      \ "SortIncludes" : "false",
-     \ "SpaceAfterCStyleCast" :"false" }
+     \ "SpaceAfterCStyleCast" :"false" 
+     \ }
 
 " Move .viminfo file to ~/.vim/cache/.viminfo
 if &compatible | set nocompatible | endif
