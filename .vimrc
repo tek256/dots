@@ -96,8 +96,8 @@ set timeoutlen=1000 ttimeoutlen=0
 " - F7: Full rebuild
 " Build that shit
 nnoremap <silent> <F1> :call ToggleQuickFix()<CR>
-nnoremap <F4> :verbose AsyncRun cmake --build build<cr>
-nnoremap <F9> :AsyncRun ctags -R <CR>
+noremap <F4> :AsyncRun cmake --build build<CR>
+noremap <F9> :AsyncRun! ctags -R<CR>
 " nnoremap <F5> :AsyncRun -cwd=<root> cmake --build build && cd build/out && ./game<CR>
 " nnoremap :dbg :Dbg<CR>
 " nnoremap <F6> :Dbg<CR>
